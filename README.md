@@ -62,7 +62,7 @@ Anda akan membutuhkan Raspberry Pi 4 / Intel NUC, MicroSD, Card Reader, Wifi/Eth
 
 ## Apa yang sudah saya integrasikan dengan Home Assistant
 
-Daftar perangkat yang sudah berhasil saya integrasikan dengan HA bisa dilihat di [sini](devices-integrated.MD)
+Daftar perangkat yang sudah berhasil saya integrasikan dengan HA bisa dilihat di [sini](devices-integrated.md)
 
 
 ### Zigbee & RF Gateway
@@ -94,9 +94,9 @@ Saya ingin buat reminder yang dibunyikan di active speaker, ketika mesin cuci sa
 
 ### Kumpulan link lainnya
 
-[Membuat Monitoring Server Home Assistant](monitoring-server-ha.MD)
+[Membuat Monitoring Server Home Assistant](monitoring-server-ha.md)
 
-[Integrasi Tasker dengan Home Assistant](integrasi-tasker-ha.md)
+[Integrasi Tasker dengan Home Assistant](integrasi-tasker-HA.md)
 
 
 [[WIP] Integrasi Home Assistant dengan Google Calendar](integrasi-google-calendar.md)

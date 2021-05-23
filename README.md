@@ -76,16 +76,31 @@ Agar bisa menghubungkan Home Assistant dengan perangkat Zigbee dan RF433, saya m
 
 ## Apa saja otomasi yang sudah saya buat dengan Home Assistant
 
-[Untitled](Belajar%20Otomasi%20Rumah%20Cerdas%20Menggunakan%20Home%20Assi%20683d87a4b7744950abace6a79258cd93/Untitled%20Database%20c9f6c94782da49c9a17c0347e9c3cb52.csv)
-
-[Automation Kanban Board](Belajar%20Otomasi%20Rumah%20Cerdas%20Menggunakan%20Home%20Assi%20683d87a4b7744950abace6a79258cd93/Automation%20Kanban%20Board%2010a019dfa6d84d9ab90e0418d7c2c864.csv)
+Name|Tags|Remarks
+-|-|-|
+Saya ingin memainkan suara azan di speaker (active speaker, Google Hub) ketika jadwal shalat masuk|`api-shalat`; `speaker`; `time-trigger`|
+Saya ingin ada suara bell di active speaker, ketika waktu memasuki jadwal event yang ada di Google Calendar (contoh: jadwal sekolah/ekskul anak)|`google-calendar`; `speaker`; `time-trigger`|
+Saya ingin ada suara bell yang diputar di active speaker, setiap jam menit 00, kecuali jam malam ketika tidur|`speaker`; `time-trigger`|
+Saya juga ingin mendapatkan notifikasi Telegram, ketika bell rumah dipencet.|`MQTT`; `RF433`; `Telegram`|
+Saya ingin memiliki detektor banjir, yaitu ketika dideteksi ada genangan berlebih di kamar mandi, bunyikan sirene (indikasi banjir)|`MQTT`; `RF433`|
+Saya bisa menghidup/matikan saklar lampu Sonoff dari mobile apps home assistant|`Sonoff`; `WIFI`|
+Saya ingin bisa menghidup/matikan saklar lampu Sonoff secara otomatis, sesuai jadwal / jam|`Sonoff`; `WIFI`; `time-trigger`|
+Saya bisa mengirimkan pesan suara (text-to-speech), yang dikirimkan melalui Telegram, diumumkan ke seluruh speaker di rumah|`Telegram`; `speaker`|
+Saya bisa melihat informasi terkait suhu, tingkat kelembapan, tekanan udara di dashboard Home Assistant|`Zigbee`|
+Ketika saya bekerja dari rumah, saya ingin memiliki sebuah continuous ping response time detector.  Ini untuk mendeteksi jika terjadi gangguan dari Internet Service Provider (ISP). Jika hasil ping melebihi threshold yang di set (misalkan: 50 ms), maka akan dikirimkan alert suara bell yang dimainkan di active speaker, dan notifikasi yang dikirim ke Telegram (TODO: notifikasi tambahan ke LED/smart light)|`Internet`; `Telegram`; `speaker`|
+Orang-orang di rumah saya, akan mendapatkan notifikasi ketika akan terjadi hujan di rumah saya. Indikator hujan bisa memanfaatkan data peringatan dini hujan dari BMKG. Notifikasi dikirimkan melalui Telegram dan Bell/pengumumuman di Active Speaker|`Internet`; `Telegram`; `speaker`|
+HA memainkan suara notifikasi di active speaker, ketika ada panggilan telepon (biasa dan Whatsapp call) ke HP saya atau istri. Sehingga kami tidak perlu selalu membawa terus HP ketika beraktivitas di rumah|`companion-apps`; `speaker`|
+Saya ingin buat reminder yang dibunyikan di active speaker, ketika mesin cuci saya selesai menjalankan task nya (karena bunyi bawaan dari mesin cucinya sangat pelan)|`Zigbee`|
 
 ### Kumpulan link lainnya
 
-[[WIP] Integrasi Home Assistant dengan Google Calendar](Belajar%20Otomasi%20Rumah%20Cerdas%20Menggunakan%20Home%20Assi%20683d87a4b7744950abace6a79258cd93/%5BWIP%5D%20Integrasi%20Home%20Assistant%20dengan%20Google%20Calen%20aef8737df99d44b0af5cdee5a68fcdd4.md)
+[Membuat Monitoring Server Home Assistant](monitoring-server-ha.MD)
 
-[Membuat Monitoring Server Home Assistant](Belajar%20Otomasi%20Rumah%20Cerdas%20Menggunakan%20Home%20Assi%20683d87a4b7744950abace6a79258cd93/Membuat%20Monitoring%20Server%20Home%20Assistant%2075f53946782245ca853723f1ea718ab2.md)
+[Integrasi Tasker dengan Home Assistant](integrasi-tasker-ha.md)
 
-[[TODO] Integrasi Home Assistant dengan Asus Router](Belajar%20Otomasi%20Rumah%20Cerdas%20Menggunakan%20Home%20Assi%20683d87a4b7744950abace6a79258cd93/%5BTODO%5D%20Integrasi%20Home%20Assistant%20dengan%20Asus%20Router%20f076e117dccf435ea102d185342f27de.md)
 
-[Integrasi Tasker dengan Home Assistant](Belajar%20Otomasi%20Rumah%20Cerdas%20Menggunakan%20Home%20Assi%20683d87a4b7744950abace6a79258cd93/Integrasi%20Tasker%20dengan%20Home%20Assistant%20aa7a86a5ff5049edb38aede470a12ab8.md)
+[[WIP] Integrasi Home Assistant dengan Google Calendar](integrasi-google-calendar.md)
+
+
+[TODO] Integrasi Home Assistant dengan Asus Router
+

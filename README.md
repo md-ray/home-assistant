@@ -9,10 +9,7 @@
 
 *Home Assistant (*[https://www.home-assistant.io](https://www.home-assistant.io/)) adalah *software open source* otomasi rumah cerdas. Prinsip utama *Home Assistant* ini adalah mengutamakan **koneksi lokal dan privasi pengguna. Artinya, pengguna bisa mengontrol penuh otomasi rumah mereka, dan tidak tergantung kepada jaringan Internet & layanan *cloud*
 
-![HA dashboard](attachments/Pasted image 20210523115556.png "dashboard")
-
-
-![[attachments/Pasted image 20210523115556.png]]
+![dashboard](attachments/20210523115556.png)
 
 ## Kenapa Home Assistant
 
@@ -40,9 +37,9 @@ Tidak hanya menyediakan panel sentral untuk menghidupmatikan lampu (atau dengan 
 Home Assistant juga dilengkapi dengan kemampuan menjalankan *add-on. Add-on* dalam Home Assistant dijalankan dalam bentuk `docker` container; sebuah pilihan yang menarik karena dengan ini Home Assistant bisa menjalankan banyak sekali software-software yang sudah ada, menjadi satu dalam sebuah platform. 
 
 
-![[Pasted image 20210523115753.png]]
+![addon](attachments/20210523115753.png)
 
-![[Pasted image 20210523115805.png]]
+![addon](attachments/20210523115805.png)
 
 
 Contohnya, saya menggunakan software `transmission` sebagai 24/7 *peer-to-peer* *download station.* Untungnya, sudah ada anggota komunitas yang membungkus `transmission` ini sebagai *add-on* di Home Assistant. Jadi, *platform* *home assistant* saya bertambah lagi fungsinya sebagai *download station* sekarang.
@@ -61,7 +58,7 @@ Anda akan membutuhkan Raspberry Pi 4 / Intel NUC, MicroSD, Card Reader, Wifi/Eth
 
 ## Arsitektur Home Assistant (HA) saya saat ini
 
-![[Pasted image 20210523115852.png]]
+![arsitektur](attachments/20210523115852.png)
 
 ## Apa yang sudah saya integrasikan dengan Home Assistant
 

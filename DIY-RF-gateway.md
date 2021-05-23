@@ -1,25 +1,38 @@
 # Membuat DIY Bridge/Gateway RF (Radio Frequency) 433 yang terhubung ke Home Assistant
 
+> Update 23 May 2021
+> Dari informasi yang saya dapatkan, gelombang RF433 ini sudah tidak boleh lagi digunakan di Indonesia (?). Mohon koreksinya jika salah saya. Jika Anda tetap ingin membuat RF433 gateway ini, risiko ditanggung sendiri ya :)
+
 Gelombang RF 433 Mhz adalah teknologi nirkabel yang cukup banyak dipakai di otomasi rumah cerdas, terutama perangkat-perangkat lama (contoh: perangkat sensor rumah dengan alarm GSM). Beberapa penyedia perangkat rumah cerdas sekarang juga masih menggunakan teknologi ini, seperti Sonoff (selain WIFI tentunya). RF 433 memiliki kelebihan jangkauan jarak yang lebih jauh, dan bisa menembus dinding. Namun kelemahannya, RF 433 ini kurang aman jika dibandingkan *wireless* teknologi lainnya.
 
 Kenapa saya membuat RF Bridge yang terhubung ke Home Assistant?
 Sederhananya, saya memiliki beberapa sensor lama yang tidak terpakai (sisa dari alarm GSM). Dan tanpa saya duga sebelumnya, ternyata bel rumah saya juga memakai frekuensi 433!
 
-![[Pasted image 20210523123745.png]]
+![bel rumah](attachments/20210523123745.png)
 
 Setiap kali bell rumah dipencet, *event* tersebut bisa ditangkap oleh *home assistant* saya, dan bisa dimanfaatkan sebagai *trigger* untuk membuat otomasi. Misalnya, mengirimkan Telegram message, setiap bel dipencet
 
-![[Pasted image 20210523123812.png]]
+![notif bell](attachments/20210523123812.png)
 
-[Perangkat yang diperlukan](Membuat%20DIY%20Bridge%20Gateway%20RF%20(Radio%20Frequency)%2043%209e2ecb73deb648a6a0462a04d6912125/Perangkat%20yang%20diperlukan%20564d7dfcb9a2428d82a6e5f80d520f4f.csv)
+### Perangkat yang diperlukan
+
+Name|Keterangan|URL Pembelian
+-|-|-|
+Microcontroller NodeMCU|Sebenarnya tidak harus NodeMCU, disarankan yang berbasis ESP9266 karena murah komponennya. Contoh lainnya: Wemos D1 Mini|https://www.tokopedia.com/rajacell/esp8266-module-nodemcu-lua-wifi-internet-of-things-development-board
+SRX882 dan STX882|Module receiver dan transmitter RF 433|https://www.tokopedia.com/rajacell/100m-433mhz-rf-wireless-data-transceiver-module-stx882-srx882-arduino
+FS1000A dan XY-MK-5V|Alternatif module receiver dan transmitter RF433.|https://www.tokopedia.com/awallaptop/modul-rx-tx-radio-pemancar-rf-kit-modul-on-off-wireless-diy-sepaket
+Breadboard|Untuk mudahkan prototyping|https://www.tokopedia.com/arduinouno/project-board-projectboard-breadboard-bread-board-400-tie-point
+Sonoff Remote 433Mhz|Jika Anda belum memiliki device 433 (atau tidak yakin), maka Anda bisa membeli remote ini|https://www.tokopedia.com/pandaking/sonoff-remote-control-rf-433mhz-remote-kontrol-433-mhz
+Kabel-kabel| male pin dll|Sesuai kebutuhan saja|
+
 
 ### Cara membuat
 
 Untuk membuat RF Gateway ini, saya menggunakan software open source, [OpenMQTTGateway](https://docs.openmqttgateway.com/) (OMG). Penggunaannya cukup mudah, dokumentasi sangat lengkap, dan komunitasnya juga aktif. OMG ini di-*flash* di NodeMCU, dan NodeMCU dihubungkan dengan sensor RF433 (SRX882 dan STX882). NodeMCU nanti juga akan terhubung dengan sinyal Wifi di rumah, sehingga bisa terhubung dengan MQTT broker yang sudah disiapkan sebelumnya (saya menggunakan [Mosquitto](https://mosquitto.org/) yang diinstall di Raspberry Pi)
 
-![Membuat%20DIY%20Bridge%20Gateway%20RF%20(Radio%20Frequency)%2043%209e2ecb73deb648a6a0462a04d6912125/Untitled%202.png](Membuat%20DIY%20Bridge%20Gateway%20RF%20(Radio%20Frequency)%2043%209e2ecb73deb648a6a0462a04d6912125/Untitled%202.png)
+![skema](attachments/20210523125851.png)
 
-![Membuat%20DIY%20Bridge%20Gateway%20RF%20(Radio%20Frequency)%2043%209e2ecb73deb648a6a0462a04d6912125/Untitled%203.png](Membuat%20DIY%20Bridge%20Gateway%20RF%20(Radio%20Frequency)%2043%209e2ecb73deb648a6a0462a04d6912125/Untitled%203.png)
+![skema 2](20210523130003.png)
 
 Skema wiring dari dokumentasi official OMG [https://docs.openmqttgateway.com/setitup/rf.html](https://docs.openmqttgateway.com/setitup/rf.html)
 
@@ -35,7 +48,7 @@ Step-by-step nya sepertinya tidak perlu saya tulis ulang di sini, karena dokumen
 6. Hubungkan NodeMCU ke PC/laptop Anda melalui USB, lalu flash OpenMQTTGateway melalui ArduinoIDE
 7. Berdoa, semoga berhasil!
 
-![Membuat%20DIY%20Bridge%20Gateway%20RF%20(Radio%20Frequency)%2043%209e2ecb73deb648a6a0462a04d6912125/Untitled%204.png](Membuat%20DIY%20Bridge%20Gateway%20RF%20(Radio%20Frequency)%2043%209e2ecb73deb648a6a0462a04d6912125/Untitled%204.png)
+![prototype receiver](attachments/20210523130058.png)
 
 Prototype RF433 Gateway menggunakan NodeMCU dan SRX882 dan STX882 yang saya buat
 
@@ -43,7 +56,7 @@ Prototype RF433 Gateway menggunakan NodeMCU dan SRX882 dan STX882 yang saya buat
 
 Bagaimana cara melakukan pengujian apakah rangkaian berhasil? Jika Anda sudah membeli Remote 433 (seperti yang kasih contoh di daftar perangkat di atas), maka setiap tombol remote dipencet, maka akan ada MQTT event yang dipublish di MQTT broker kita. Untuk inspeksi event-event di MQTT broker, Anda bisa menggunakan software [MQTT Explorer](http://mqtt-explorer.com/)
 
-![Membuat%20DIY%20Bridge%20Gateway%20RF%20(Radio%20Frequency)%2043%209e2ecb73deb648a6a0462a04d6912125/Untitled%205.png](Membuat%20DIY%20Bridge%20Gateway%20RF%20(Radio%20Frequency)%2043%209e2ecb73deb648a6a0462a04d6912125/Untitled%205.png)
+![pengujian](attachments/20210523130113.png)
 
 ## RF 433 Transmitter
 
@@ -51,7 +64,7 @@ Bagaimana dengan Transmitter RF 433? Ya, tentu saja bisa! Saya bisa membunyikan 
 
 Dari pengalaman saya, saya belum berhasil membuat transmitter bekerja menggunakan komponen STX882 (kemungkinan harus diperbaiki kualitas wiringnya). Akhirnya, saya cari lagi komponen sejenis dan akhirnya ketemu yang bisa, yaitu `FS1000A`.
 
-![Membuat%20DIY%20Bridge%20Gateway%20RF%20(Radio%20Frequency)%2043%209e2ecb73deb648a6a0462a04d6912125/Untitled%206.png](Membuat%20DIY%20Bridge%20Gateway%20RF%20(Radio%20Frequency)%2043%209e2ecb73deb648a6a0462a04d6912125/Untitled%206.png)
+![RF transmitter](attachments/20210523130128.png)
 
 Prototype RF 433 Transmitter only, menggunakan FS1000A dan Wemos D1 Mini.
 
@@ -71,4 +84,13 @@ Sangat banyak! List lengkapnya bisa dilihat di bawah, atau di [https://docs.goog
 
 Saya sendiri sudah mencoba 3 device merk DIGOO, yang saya beli dengan harga cukup murah dari bangood
 
-[Untitled](Membuat%20DIY%20Bridge%20Gateway%20RF%20(Radio%20Frequency)%2043%209e2ecb73deb648a6a0462a04d6912125/Untitled%20Database%20c7299cbfc94f4cbd8b7e1b75da6b19dc.csv)
+### Perangkat RF433 yang sudah saya integrasikan dengan HA
+
+Name|Description|URL
+-|-|
+Digoo DG-HOSA 433MHz Wireless Water Leakage|Sensor yang bisa mengirimkan kode RF433 jika mendeteksi adanya genangan air / banjir. Saya pakai ini, karena rumah saya pernah beberapa kali mengalami banjir masuk ke rumah|https://www.banggood.com/Digoo-DG-HOSA-433MHz-Wireless-Water-Leakage-Alarm-Water-Level-Detector-for-Home-Security-Guarding-p-1178109.html?p=SZ25159101562014119R&custlinkid=1187988
+Digoo ROSA Siren|Sirene, yang bisa ditrigger dengan kode RF433 dari home automation server saya. Bisa dihubungkan dengan berbagai skenario|https://www.banggood.com/Digoo-DG-ROSA-433MHz-Wireless-Standalone-Alarm-Siren-Multi-function-Security-Systems-Host-p-1169577.html?p=SZ25159101562014119R&custlinkid=1187979
+Digo DG-SD10 Door Bell|Bell rumah, yang tombol nya tidak perlu pakai baterai. Kelebihan bell ini, bisa ditrigger dengan berbagai kode RF433 yang berbeda, dan bisa menghasilkan bunyi yang berbeda juga! Namun sayangnya, ini tidak bekerja out of the box. Anda harus melakukan modifikasi minor terlebih dahulu di source code library RCSwitch (bisa dilihat di https://community.openmqttgateway.com/t/digoo-dg-sd10-doorbell/1137)|https://www.banggood.com/DIGOO-DG-SD10-Transmitter-Self-powered-Waterproof-Doorbell-EUUSUK-Plug-Unique-Sliding-Button-58-Me-p-1261378.html?rmmds=search&ID=47184&cur_warehouse=CN&p=SZ25159101562014119R&custlinkid=1206578
+Sonoff DW1 Door Sensor||https://www.tokopedia.com/pandaking/sonoff-dw1-smart-door-sensor-rf-433mhz-alarm
+Sonoff Remote 4 button||https://www.tokopedia.com/pandaking/sonoff-remote-control-rf-433mhz-remote-kontrol-433-mhz
+Sonoff Remote 8 Button||

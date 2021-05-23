@@ -32,7 +32,7 @@ Untuk membuat RF Gateway ini, saya menggunakan software open source, [OpenMQTTGa
 
 ![skema](attachments/20210523125851.png)
 
-![skema 2](20210523130003.png)
+![skema 2](attachments/20210523130003.png)
 
 Skema wiring dari dokumentasi official OMG [https://docs.openmqttgateway.com/setitup/rf.html](https://docs.openmqttgateway.com/setitup/rf.html)
 
@@ -87,7 +87,7 @@ Saya sendiri sudah mencoba 3 device merk DIGOO, yang saya beli dengan harga cuku
 ### Perangkat RF433 yang sudah saya integrasikan dengan HA
 
 Name|Description|URL
--|-|
+-|-|-|
 Digoo DG-HOSA 433MHz Wireless Water Leakage|Sensor yang bisa mengirimkan kode RF433 jika mendeteksi adanya genangan air / banjir. Saya pakai ini, karena rumah saya pernah beberapa kali mengalami banjir masuk ke rumah|https://www.banggood.com/Digoo-DG-HOSA-433MHz-Wireless-Water-Leakage-Alarm-Water-Level-Detector-for-Home-Security-Guarding-p-1178109.html?p=SZ25159101562014119R&custlinkid=1187988
 Digoo ROSA Siren|Sirene, yang bisa ditrigger dengan kode RF433 dari home automation server saya. Bisa dihubungkan dengan berbagai skenario|https://www.banggood.com/Digoo-DG-ROSA-433MHz-Wireless-Standalone-Alarm-Siren-Multi-function-Security-Systems-Host-p-1169577.html?p=SZ25159101562014119R&custlinkid=1187979
 Digo DG-SD10 Door Bell|Bell rumah, yang tombol nya tidak perlu pakai baterai. Kelebihan bell ini, bisa ditrigger dengan berbagai kode RF433 yang berbeda, dan bisa menghasilkan bunyi yang berbeda juga! Namun sayangnya, ini tidak bekerja out of the box. Anda harus melakukan modifikasi minor terlebih dahulu di source code library RCSwitch (bisa dilihat di https://community.openmqttgateway.com/t/digoo-dg-sd10-doorbell/1137)|https://www.banggood.com/DIGOO-DG-SD10-Transmitter-Self-powered-Waterproof-Doorbell-EUUSUK-Plug-Unique-Sliding-Button-58-Me-p-1261378.html?rmmds=search&ID=47184&cur_warehouse=CN&p=SZ25159101562014119R&custlinkid=1206578

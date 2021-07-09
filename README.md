@@ -102,6 +102,8 @@ Agar bisa menghubungkan Home Assistant dengan perangkat Zigbee dan RF433, saya m
 
 [Membuat Monitoring Server Home Assistant](monitoring-server-ha.md)
 [Integrasi Tasker dengan Home Assistant](integrasi-tasker-HA.md)
+[TODO-Integrasi phonecall/whastapp call ke Home Speaker](integrasi-call-speaker.md)
+[TODO-Reminder pintu tertutup/terbuka terlalu lama](door-open-reminder.md)
 [[WIP] Integrasi Home Assistant dengan Google Calendar](integrasi-google-calendar.md)
 [TODO] Integrasi Home Assistant dengan Asus Router
 

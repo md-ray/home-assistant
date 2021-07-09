@@ -2,12 +2,12 @@
 
 
 > Ditulis oleh Muhammad Rayhan (saya bisa dihubungi di Twitter [@md_ray](https://twitter.com/md_ray))
-> Tulisan saya buat sebagai catatan pribadi saya dalam melakukan eksplorasi Home Assistant, untuk mengimplementasikan **rumah cerdas** **di rumah saya. Harapannya tulisan ini juga bisa bermanfaat bagi orang lain yang memiliki ketertarikan yang sama. Bagi yang ingin berkontribusi, menyampaikan masukan atau kritikan silakan sampaikan di bagian *comment* atau hubungi saya langsung.
+> Tulisan saya buat sebagai catatan pribadi saya dalam melakukan eksplorasi Home Assistant, untuk mengimplementasikan **rumah cerdas** di rumah saya. Harapannya tulisan ini juga bisa bermanfaat bagi orang lain yang memiliki ketertarikan yang sama. Bagi yang ingin berkontribusi, menyampaikan masukan atau kritikan silakan sampaikan di bagian *comment* atau hubungi saya langsung.
 
 
 ## Apa itu Home Assistant
 
-*Home Assistant (*[https://www.home-assistant.io](https://www.home-assistant.io/)) adalah *software open source* otomasi rumah cerdas. Prinsip utama *Home Assistant* ini adalah mengutamakan **koneksi lokal dan privasi pengguna. Artinya, pengguna bisa mengontrol penuh otomasi rumah mereka, dan tidak tergantung kepada jaringan Internet & layanan *cloud*
+*Home Assistant (*[https://www.home-assistant.io](https://www.home-assistant.io/)) adalah *software open source* otomasi rumah cerdas. Prinsip utama *Home Assistant* ini adalah mengutamakan **koneksi lokal dan privasi pengguna. Artinya, pengguna bisa mengontrol penuh otomasi rumah mereka, dan tidak tergantung kepada jaringan Internet & layanan *cloud
 
 ![dashboard](attachments/20210523115556.png)
 
@@ -43,6 +43,11 @@ Home Assistant juga dilengkapi dengan kemampuan menjalankan *add-on. Add-on* dal
 
 
 Contohnya, saya menggunakan software `transmission` sebagai 24/7 *peer-to-peer* *download station.* Untungnya, sudah ada anggota komunitas yang membungkus `transmission` ini sebagai *add-on* di Home Assistant. Jadi, *platform* *home assistant* saya bertambah lagi fungsinya sebagai *download station* sekarang.
+![addon](attachments/20210709210851.png)
+
+Contoh lainnya, saya menggunakan `AdGuard` sebuah open-source software yang berfungsi sebagai AdBlocker dan DNS Over HTTPS (DOH).
+![addon](attachments/20210709211208.png)
+
 
 ## FAQ (Frequently Asked Question)
 
@@ -65,15 +70,6 @@ Anda akan membutuhkan Raspberry Pi 4 / Intel NUC, MicroSD, Card Reader, Wifi/Eth
 Daftar perangkat yang sudah berhasil saya integrasikan dengan HA bisa dilihat di [sini](devices-integrated.md)
 
 
-### Zigbee & RF Gateway
-
-Agar bisa menghubungkan Home Assistant dengan perangkat Zigbee dan RF433, saya membuat Gateway secara DIY. Detailnya bisa dilihat seperti link di bawah
-
-[Membuat DIY Bridge/Gateway RF (Radio Frequency) 433 yang terhubung ke Home Assistant](DIY-RF-gateway.md)
-
-[TODO] Membuat DIY Zigbee gateway
-[TODO] Menghubungkan Conbee II dengan Home Assistant
-
 ## Apa saja otomasi yang sudah saya buat dengan Home Assistant
 
 Name|Tags|Remarks
@@ -92,15 +88,20 @@ Orang-orang di rumah saya, akan mendapatkan notifikasi ketika akan terjadi hujan
 HA memainkan suara notifikasi di active speaker, ketika ada panggilan telepon (biasa dan Whatsapp call) ke HP saya atau istri. Sehingga kami tidak perlu selalu membawa terus HP ketika beraktivitas di rumah|`companion-apps`; `speaker`|
 Saya ingin buat reminder yang dibunyikan di active speaker, ketika mesin cuci saya selesai menjalankan task nya (karena bunyi bawaan dari mesin cucinya sangat pelan)|`Zigbee`|
 
-### Kumpulan link lainnya
+## Zigbee & RF Gateway
+
+Agar bisa menghubungkan Home Assistant dengan perangkat Zigbee dan RF433, saya membuat Gateway secara DIY. Detailnya bisa dilihat seperti link di bawah
+
+[Membuat DIY Bridge/Gateway RF (Radio Frequency) 433 yang terhubung ke Home Assistant](DIY-RF-gateway.md)
+
+[TODO] Membuat DIY Zigbee gateway
+[TODO] Menghubungkan Conbee II dengan Home Assistant
+
+
+## Kumpulan link lainnya
 
 [Membuat Monitoring Server Home Assistant](monitoring-server-ha.md)
-
 [Integrasi Tasker dengan Home Assistant](integrasi-tasker-HA.md)
-
-
 [[WIP] Integrasi Home Assistant dengan Google Calendar](integrasi-google-calendar.md)
-
-
 [TODO] Integrasi Home Assistant dengan Asus Router
 

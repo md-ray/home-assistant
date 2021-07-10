@@ -1,3 +1,5 @@
+# Daftar Perangkat Terintegrasi dengan HA
+
 Name|Connection|Description
 -|-|-|
 Sonoff Slampher|WIFI [SonoffLan](https://github.com/AlexxIT/SonoffLAN)|Sonoff Slampher adalah perangkat rumah lampu socket E27. Artinya dengan menggunakan ini kita bisa membuat lampu-lampu yang kita punya jadi cerdas. Menggunakan komponen integrasi SonoffLAN yang memanfaatkan LAN integration yang diprovide oleh Sonoff. Jadi integrasi tetap bisa jalan walaupun koneksi rumah ke Internet terputus.

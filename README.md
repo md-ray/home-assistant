@@ -7,7 +7,7 @@
 
 ## Apa itu Home Assistant
 
-*Home Assistant (*[https://www.home-assistant.io](https://www.home-assistant.io/)) adalah *software open source* otomasi rumah cerdas. Prinsip utama *Home Assistant* ini adalah mengutamakan **koneksi lokal dan privasi pengguna. Artinya, pengguna bisa mengontrol penuh otomasi rumah mereka, dan tidak tergantung kepada jaringan Internet & layanan *cloud
+*Home Assistant (*[https://www.home-assistant.io](https://www.home-assistant.io/)) adalah *software open source* otomasi rumah cerdas. Prinsip utama *Home Assistant* ini adalah mengutamakan koneksi lokal dan privasi pengguna. Artinya, pengguna bisa mengontrol penuh otomasi rumah mereka, dan tidak tergantung kepada jaringan Internet & layanan cloud
 
 ![dashboard](attachments/20210523115556.png)
 
@@ -41,9 +41,10 @@ Home Assistant juga dilengkapi dengan kemampuan menjalankan *add-on. Add-on* dal
 
 ![addon](attachments/20210523115805.png)
 
-
+<br/>
 Contohnya, saya menggunakan software `transmission` sebagai 24/7 *peer-to-peer* *download station.* Untungnya, sudah ada anggota komunitas yang membungkus `transmission` ini sebagai *add-on* di Home Assistant. Jadi, *platform* *home assistant* saya bertambah lagi fungsinya sebagai *download station* sekarang.
 ![addon](attachments/20210709210851.png)
+<br/>
 
 Contoh lainnya, saya menggunakan `AdGuard` sebuah open-source software yang berfungsi sebagai AdBlocker dan DNS Over HTTPS (DOH).
 ![addon](attachments/20210709211208.png)
@@ -64,29 +65,21 @@ Anda akan membutuhkan Raspberry Pi 4 / Intel NUC, MicroSD, Card Reader, Wifi/Eth
 ## Arsitektur Home Assistant (HA) saya saat ini
 
 ![arsitektur](attachments/20210523115852.png)
-
+<br/>
 ## Apa yang sudah saya integrasikan dengan Home Assistant
 
 Daftar perangkat yang sudah berhasil saya integrasikan dengan HA bisa dilihat di [sini](devices-integrated.md)
-
+<br/>
 
 ## Apa saja otomasi yang sudah saya buat dengan Home Assistant
-
-Name|Tags|Remarks
--|-|-|
-Saya ingin memainkan suara azan di speaker (active speaker, Google Hub) ketika jadwal shalat masuk|`api-shalat`; `speaker`; `time-trigger`|
-Saya ingin ada suara bell di active speaker, ketika waktu memasuki jadwal event yang ada di Google Calendar (contoh: jadwal sekolah/ekskul anak)|`google-calendar`; `speaker`; `time-trigger`|
-Saya ingin ada suara bell yang diputar di active speaker, setiap jam menit 00, kecuali jam malam ketika tidur|`speaker`; `time-trigger`|
-Saya juga ingin mendapatkan notifikasi Telegram, ketika bell rumah dipencet.|`MQTT`; `RF433`; `Telegram`|
-Saya ingin memiliki detektor banjir, yaitu ketika dideteksi ada genangan berlebih di kamar mandi, bunyikan sirene (indikasi banjir)|`MQTT`; `RF433`|
-Saya bisa menghidup/matikan saklar lampu Sonoff dari mobile apps home assistant|`Sonoff`; `WIFI`|
-Saya ingin bisa menghidup/matikan saklar lampu Sonoff secara otomatis, sesuai jadwal / jam|`Sonoff`; `WIFI`; `time-trigger`|
-Saya bisa mengirimkan pesan suara (text-to-speech), yang dikirimkan melalui Telegram, diumumkan ke seluruh speaker di rumah|`Telegram`; `speaker`|
-Saya bisa melihat informasi terkait suhu, tingkat kelembapan, tekanan udara di dashboard Home Assistant|`Zigbee`|
-Ketika saya bekerja dari rumah, saya ingin memiliki sebuah continuous ping response time detector.  Ini untuk mendeteksi jika terjadi gangguan dari Internet Service Provider (ISP). Jika hasil ping melebihi threshold yang di set (misalkan: 50 ms), maka akan dikirimkan alert suara bell yang dimainkan di active speaker, dan notifikasi yang dikirim ke Telegram (TODO: notifikasi tambahan ke LED/smart light)|`Internet`; `Telegram`; `speaker`|
-Orang-orang di rumah saya, akan mendapatkan notifikasi ketika akan terjadi hujan di rumah saya. Indikator hujan bisa memanfaatkan data peringatan dini hujan dari BMKG. Notifikasi dikirimkan melalui Telegram dan Bell/pengumumuman di Active Speaker|`Internet`; `Telegram`; `speaker`|
-HA memainkan suara notifikasi di active speaker, ketika ada panggilan telepon (biasa dan Whatsapp call) ke HP saya atau istri. Sehingga kami tidak perlu selalu membawa terus HP ketika beraktivitas di rumah|`companion-apps`; `speaker`|
-Saya ingin buat reminder yang dibunyikan di active speaker, ketika mesin cuci saya selesai menjalankan task nya (karena bunyi bawaan dari mesin cucinya sangat pelan)|`Zigbee`|
+Beberapa otomasi penting yang sudah saya buat antara lain
+- Reminder/announcement jadwal kegiatan anak (e.g. sekolah, ekskul, ngaji) melalui beberapa speaker di rumah. Ini sangat membantu di situasi WFH/SFH yang mana kita sering lupa waktu. Jadwal kegiatan disimpan di Google Calendar
+- Reminder/announcement ketika mesin cuci selesai. Bahkan saya buat reminder tambahan, ketika setelah durasi tertentu, pakaian juga belum dijemur
+- Announcement di seluruh rumah ketika ada panggilan telefon masuk.
+- Notifikasi di handphone ketika bell rumah dipencet
+- Notifikasi ketika BMKG mengeluarkan peringatan dini hujan sedang/lebat
+- Notifikasi ketika kamar mandi bawah airnya meluap (kondisi banjir). Alert dimainkan di speaker utama rumah
+Untuk daftar lengkap otomasi yang sudah saya buat bisa diakses di [sini](daftar-otomasi.md)
 
 ## Zigbee & RF Gateway
 

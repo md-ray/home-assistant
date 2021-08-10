@@ -15,6 +15,7 @@
 Dengan home assistant kita juga bisa mengumpulkan data-data / metrik menarik yang ada di rumah kita, dan juga memvisualisasikannya. Contohnya, saya menggunakan Home Assistant untuk mengukur konsumsi listrik di rumah, dan juga mengukur beberapa metrik terkait performansi jaringan di rumah saya
 
 ![grafana](attachments/20210810201521.png)
+<br/>
 
 ## Kenapa Home Assistant
 
@@ -27,13 +28,14 @@ Dengan home assistant kita juga bisa mengumpulkan data-data / metrik menarik yan
 - `Extensible`; Home Assistant merupakan produk *open source* yang dikelola oleh komunitas yang sangat aktif. Banyak fitur integrasi-integrasi baru yang dikembangkan dan diintegrasikan (lihat saja di [https://www.home-assistant.io/integrations/](https://www.home-assistant.io/integrations/))
 - `Cost-effective`; Kita bisa kombinasikan device/sensor dari berbagai vendor, dengan harga yang efektif sesuai dengan fiturnya
 - `Limitless` Home Automation Scenario! Karena Anda bisa *full-control*, integrasi yang banyak, perkembangan *software* yang aktif dibantu komunitas.
-
+<br/>
 
 ## Kenapa *tidak Home Assistant*
 
 - Jika Anda tidak ingin ribet dan malas ngoprek, tidak disarankan menggunakan Home Assistant.
 - Setup Home Assistant menurut saya juga membutuhkan sedikit pengalaman IT (misalnya, install OS, edit konfigurasi file, ssh, IP). Banyak ekosistem *home automation* lain yang jauh lebih mudah digunakan, seperti Bardi, Xiaomi dan Apple Homekit.
 - Kekurangan lainnya, kita harus *maintain server* Home Assistant ini (misalnya, Raspberry Pi).
+<br/>
 
 ## Lebih dari sekadar Home Automation biasa
 
@@ -48,13 +50,10 @@ Home Assistant juga dilengkapi dengan kemampuan menjalankan *add-on. Add-on* dal
 ![addon](attachments/20210523115805.png)
 
 <br/>
-Contohnya, saya menggunakan software `transmission` sebagai 24/7 *peer-to-peer* *download station.* Untungnya, sudah ada anggota komunitas yang membungkus `transmission` ini sebagai *add-on* di Home Assistant. Jadi, *platform* *home assistant* saya bertambah lagi fungsinya sebagai *download station* sekarang.
-![addon](attachments/20210709210851.png)
-<br/>
+Contohnya, saya menggunakan `AdGuard` sebuah open-source software yang berfungsi sebagai AdBlocker dan DNS Over HTTPS (DOH).
 
-Contoh lainnya, saya menggunakan `AdGuard` sebuah open-source software yang berfungsi sebagai AdBlocker dan DNS Over HTTPS (DOH).
 ![addon](attachments/20210709211208.png)
-
+<br/>
 
 ## FAQ (Frequently Asked Question)
 
@@ -67,6 +66,7 @@ A: Raspberry Pi (disarankan minimal Raspberry Pi 4 dengan RAM 2 GB) dan Intel NU
 *Q: Saya ingin coba setup server Home Assistant. Apa saja yang saya butuhkan*
 A: Lengkapnya bisa diakses di [https://www.home-assistant.io/getting-started/](https://www.home-assistant.io/getting-started/). 
 Anda akan membutuhkan Raspberry Pi 4 / Intel NUC, MicroSD, Card Reader, Wifi/Ethernet Connectivity.
+<br/>
 
 ## Arsitektur Home Assistant (HA) saya saat ini
 
@@ -86,6 +86,7 @@ Beberapa otomasi penting yang sudah saya buat antara lain
 - Notifikasi ketika BMKG mengeluarkan peringatan dini hujan sedang/lebat
 - Notifikasi ketika kamar mandi bawah airnya meluap (kondisi banjir). Alert dimainkan di speaker utama rumah
 Untuk daftar lengkap otomasi yang sudah saya buat bisa diakses di [sini](daftar-otomasi.md)
+<br/>
 
 ## Zigbee & RF Gateway
 
@@ -95,7 +96,7 @@ Agar bisa menghubungkan Home Assistant dengan perangkat Zigbee dan RF433, saya m
 
 [TODO] Membuat DIY Zigbee gateway
 [TODO] Menghubungkan Conbee II dengan Home Assistant
-
+<br/>
 
 ## Kumpulan link lainnya
 
@@ -104,5 +105,4 @@ Agar bisa menghubungkan Home Assistant dengan perangkat Zigbee dan RF433, saya m
 [TODO-Integrasi phonecall/whastapp call ke Home Speaker](integrasi-call-speaker.md)
 [TODO-Reminder pintu tertutup/terbuka terlalu lama](door-open-reminder.md)
 [[WIP] Integrasi Home Assistant dengan Google Calendar](integrasi-google-calendar.md)
-[TODO] Integrasi Home Assistant dengan Asus Router
-
+[TODO-Integrasi Home Assistant dengan Asus Router](undef.md)

@@ -11,6 +11,11 @@
 
 ![dashboard](attachments/20210523115556.png)
 
+<br/>
+Dengan home assistant kita juga bisa mengumpulkan data-data / metrik menarik yang ada di rumah kita, dan juga memvisualisasikannya. Contohnya, saya menggunakan Home Assistant untuk mengukur konsumsi listrik di rumah, dan juga mengukur beberapa metrik terkait performansi jaringan di rumah saya
+
+![grafana](attachments/20210810201521.png)
+
 ## Kenapa Home Assistant
 
 - `Full-control`; Server *Home Assistant* ada di rumah kita. Data-data kita aman, dan tetap bisa jalan walaupun koneksi rumah ke Internet terputus
@@ -33,6 +38,7 @@
 ## Lebih dari sekadar Home Automation biasa
 
 Tidak hanya menyediakan panel sentral untuk menghidupmatikan lampu (atau dengan jadwal otomatis), tidak hanya bisa mendeteksi *event* atau informasi dari sensor; jauh lebih dari itu. Home Assistant adalah platform lengkap *home automation* yang sangat bisa dikustomisasi sesuai kebutuhan. Kita bisa membuat [monitoring dashboard](Belajar%20Otomasi%20Rumah%20Cerdas%20Menggunakan%20Home%20Assi%20683d87a4b7744950abace6a79258cd93/Membuat%20Monitoring%20Server%20Home%20Assistant%2075f53946782245ca853723f1ea718ab2.md) misalnya, untuk memonitor banyak hal, seperti kondisi perangkat komputer kita, perangkat network seperti router, atau hal-hal umum seperti informasi cuaca, mata uang, dan saham (demo bisa diakses di [https://demo.home-assistant.io/#/lovelace/0](https://demo.home-assistant.io/#/lovelace/0)).
+
 
 Home Assistant juga dilengkapi dengan kemampuan menjalankan *add-on. Add-on* dalam Home Assistant dijalankan dalam bentuk `docker` container; sebuah pilihan yang menarik karena dengan ini Home Assistant bisa menjalankan banyak sekali software-software yang sudah ada, menjadi satu dalam sebuah platform. 
 
